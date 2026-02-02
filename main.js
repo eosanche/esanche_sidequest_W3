@@ -23,8 +23,6 @@
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
-let ultramarineslogo;
-
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------
@@ -35,10 +33,6 @@ function setup() {
   // Sets a default font for all text() calls
   // (This can be changed later per-screen if you want.)
   textFont("sans-serif");
-}
-
-function preload() {
-  ultramarineslogo = loadImage("assets/Ultramarines_logo.png");
 }
 
 // ------------------------------

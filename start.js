@@ -21,15 +21,6 @@ function drawStart() {
   textFont("Zalando Sans Expanded");
   text("Show No Fear", width / 2, 180);
 
-  imageMode(CENTER);
-  image(
-    ultramarineslogo,
-    width / 2,
-    height / 1.3,
-    ultramarineslogo.width,
-    ultramarineslogo.height,
-  );
-
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
   // Using objects makes it easy to pass them into drawButton()
