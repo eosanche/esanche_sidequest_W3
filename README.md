@@ -6,7 +6,7 @@ GBDA302 Week 3 Example 1: Instructions Screen with Back button
 
 ## Authors
 
-Karen Cochrane and David Han
+Emerson Sanchez
 
 ---
 
@@ -28,12 +28,12 @@ This p5.js project demonstrates a simple multi-screen game structure using a sta
 
 ## Assets
 
-N/A
+Vector png of the Ultramarines logo, created by me.
 
 ---
 
 ## GenAI
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
+GenAI was used to get the code have the img to appear on the starting screen.
 
 ---
