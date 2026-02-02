@@ -27,9 +27,10 @@ function drawInstr() {
   // This is useful for simple multi-line instructions
   const lines =
     "Decide the fate you & your team in the Grimdark.\n" +
-    "Will you be victorious or fall in the hands of the enemy?";
+    "This is a click decision based game.\n" +
+    "Make the right decisions, be victorious or fall in the hands of the enemy.";
 
-  text(lines, width / 2, 160);
+  text(lines, width / 2, 340);
 
   // ---- Back button ----
   // This button lets the player return to the start screen

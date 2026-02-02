@@ -17,7 +17,7 @@ const gameBtn2 = {
   y: 550, // y position (centre of the button)
   w: 300, // width
   h: 90, // height
-  label: "Fight The Swarm", // text shown on the button
+  label: "250x Imperial Forces", // text shown on the button
 };
 
 const gameBtnlose2 = {
@@ -25,7 +25,7 @@ const gameBtnlose2 = {
   y: 550, // y position (centre of the button)
   w: 300, // width
   h: 90, // height
-  label: "Enter The Tunnel", // text shown on the button
+  label: "9x Terminators", // text shown on the button
 };
 
 // ------------------------------
@@ -46,7 +46,7 @@ function drawWin() {
 
   textSize(18);
   text(
-    'You chose to fight the Tyranids ahead. "FOR THE EMPEROR" as you shout \n into the swarm. even with the genetic enhancements that you and your team \n has been blessed upon you, the fight was no easy feat. The horde kept \n their non-stop assault, almost drowning your team in the swarm. \n You nearly lose a member of your squad but you all pull out together \n with the bloodshed dripping down your armor.',
+    'You chose to fight the Tyranids ahead. "FOR THE EMPEROR" you shout. \n Even with the genetic enhancements that you and your team \n has been blessed upon you, the fight was no easy feat. The horde kept \n their non-stop assault, almost drowning your team in the swarm. \n You nearly lose a member of your squad but you all pull out together \n with the bloodshed dripping down your armor.',
     width / 2,
     280,
   );
@@ -57,10 +57,14 @@ function drawWin() {
     width / 2,
     400,
   );
+
+  fill("#1de649");
+  textSize(20);
+  text("+ 20 Pts", width / 2, 120);
   // ---- Draw the button ----
   // We pass the button object to a helper function
-  drawGameButton(gameBtn2);
-  drawGameButton(gameBtnlose2);
+  winGameButton(gameBtn2);
+  winGameButton(gameBtnlose2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
@@ -73,7 +77,7 @@ function drawWin() {
 // ------------------------------
 // This function is responsible *only* for drawing the button.
 // It does NOT handle clicks or game logic.
-function drawGameButton({ x, y, w, h, label }) {
+function winGameButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check if the mouse is hovering over the button
@@ -95,7 +99,7 @@ function drawGameButton({ x, y, w, h, label }) {
 
   // Draw the button text
   fill(0);
-  textSize(28);
+  textSize(22);
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
@@ -111,7 +115,7 @@ function winMousePressed() {
     currentScreen = "win2";
   }
   if (isHover(gameBtnlose2)) {
-    currentScreen = "lose";
+    currentScreen = "win2-1";
   }
 }
 
@@ -122,7 +126,7 @@ function winMousePressed() {
 function winKeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
   if (keyCode === ENTER) {
-    triggerRandomOutcome();
+    wintriggerRandomOutcome();
   }
 }
 
@@ -131,7 +135,7 @@ function winKeyPressed() {
 // ------------------------------
 // This function decides what happens next in the game.
 // It does NOT draw anything.
-function triggerRandomOutcome() {
+function wintriggerRandomOutcome() {
   // random() returns a value between 0 and 1
   // Here we use a 50/50 chance:
   // - less than 0.5 → win
@@ -142,6 +146,6 @@ function triggerRandomOutcome() {
   if (random() < 0.5) {
     currentScreen = "win2";
   } else {
-    currentScreen = "lose";
+    currentScreen = "win2-1";
   }
 }

@@ -18,7 +18,7 @@
 // ------------------------------
 // drawGame() is called from main.js *only*
 // when currentScreen === "game"
-function drawWin2() {
+function drawWin21() {
   // Set background colour for the game screen
   background("#25a12d");
 
@@ -31,21 +31,21 @@ function drawWin2() {
 
   textSize(18);
   text(
-    "You call upon the imperial forces to push to the hivemind. Despite \n the large numbers, the imperial forces quickly start to dwindle, \n lose a few casualties including some of your own men. \n However, your combined efforts were not in vein as you provide the last \n killing blow destroying the hivemind and saving for what is left for this planet.",
+    "A squad of terminators arrive at your position. With their plated armor \n and heavy armory, they swiftly mow down the  ravenous beasts before they \n could react. With chains of bolter fire, you run towards the hivemind \n with your chainsword mercilessly denying its final thought. \n Courage and Honour.",
     width / 2,
     280,
   );
 
   textSize(26);
-  text("Press R go back to the main screen", width / 2, 400);
+  text("Press R to go back to the main screen", width / 2, 400);
 
   fill("#ffffff");
   textSize(20);
-  text("+ 80 Pts", width / 2, 120);
+  text("+ 180 Pts", width / 2, 120);
 
   fill("#ffffff");
   textSize(26);
-  text("Total Score: 100 PTS", width / 2, 550);
+  text("Total Score: 200 PTS", width / 2, 550);
 }
 
 // ------------------------------
@@ -53,7 +53,7 @@ function drawWin2() {
 // ------------------------------
 // This function is called from main.js
 // only when currentScreen === "game"
-function win2MousePressed() {
+function win21MousePressed() {
   // Only trigger the outcome if the button is clicked
   currentScreen = "start";
 }
@@ -62,7 +62,7 @@ function win2MousePressed() {
 // Keyboard input for this screen
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
-function win2KeyPressed() {
+function win21KeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
   if (key === "r" || key === "R") {
     currentScreen = "start";

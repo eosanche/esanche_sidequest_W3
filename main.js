@@ -23,6 +23,8 @@
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
+let ultramarineslogo;
+
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------
@@ -33,6 +35,10 @@ function setup() {
   // Sets a default font for all text() calls
   // (This can be changed later per-screen if you want.)
   textFont("sans-serif");
+}
+
+function preload() {
+  ultramarineslogo = loadImage("assets/Ultramarines_logo.png");
 }
 
 // ------------------------------
@@ -53,6 +59,7 @@ function draw() {
   else if (currentScreen === "game") drawGame();
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "win2") drawWin2();
+  else if (currentScreen === "win2-1") drawWin21();
   else if (currentScreen === "lose") drawLose();
 
   // (Optional teaching note)
@@ -81,6 +88,8 @@ function mousePressed() {
   // This prevents errors if a screen doesn’t implement a handler.
   else if (currentScreen === "win") winMousePressed?.();
   else if (currentScreen === "win2") win2MousePressed?.();
+  else if (currentScreen === "win3") win3MousePressed?.();
+  else if (currentScreen === "win2-1") win21MousePressed();
   else if (currentScreen === "lose") loseMousePressed?.();
 }
 
@@ -101,6 +110,8 @@ function keyPressed() {
   else if (currentScreen === "game") gameKeyPressed?.();
   else if (currentScreen === "win") winKeyPressed?.();
   else if (currentScreen === "win2") win2KeyPressed?.();
+  else if (currentScreen === "win3") win3KeyPressed?.();
+  else if (currentScreen === "win2-1") win21KeyPressed();
   else if (currentScreen === "lose") loseKeyPressed?.();
 }
 

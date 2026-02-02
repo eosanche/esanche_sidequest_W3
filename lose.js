@@ -18,7 +18,7 @@ function drawLose() {
 
   // Main success message
   textSize(40);
-  text("Only In Death does Duty End...", width / 2, 160);
+  text("Only In Death does Duty End... \n (LOSE)", width / 2, 160);
 
   textSize(18);
   text(
@@ -26,6 +26,9 @@ function drawLose() {
     width / 2,
     280,
   );
+
+  textSize(26);
+  text("Press R to go back to the main screen", width / 2, 400);
 }
 
 // ------------------------------
