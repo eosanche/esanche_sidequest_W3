@@ -13,11 +13,19 @@
 // Keeping this in one object makes it easier to move,
 // resize, or restyle the button later.
 const gameBtn = {
-  x: 400, // x position (centre of the button)
+  x: 200, // x position (centre of the button)
   y: 550, // y position (centre of the button)
-  w: 260, // width
+  w: 300, // width
   h: 90, // height
-  label: "PRESS HERE", // text shown on the button
+  label: "Fight The Swarm", // text shown on the button
+};
+
+const gameBtnlose = {
+  x: 550, // x position (centre of the button)
+  y: 550, // y position (centre of the button)
+  w: 300, // width
+  h: 90, // height
+  label: "Enter The Tunnel", // text shown on the button
 };
 
 // ------------------------------
@@ -27,29 +35,35 @@ const gameBtn = {
 // when currentScreen === "game"
 function drawGame() {
   // Set background colour for the game screen
-  background(240, 230, 140);
+  background(38, 49, 76);
+
+  fill("#FFFFFF");
 
   // ---- Title and instructions text ----
-  fill(0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Game Screen", width / 2, 160);
+  text(
+    "In The Grim Darkness of the Far Future, \n There Is Only War.",
+    width / 2,
+    160,
+  );
 
   textSize(18);
   text(
-    "Click the button (or press ENTER) for a random result.",
+    "Overrun with a large invasion of Tyranid forces in one of the cities of ultramar, \n a squad of ultramarines quickly drop into the heart of the battle bringing \n down the number of these horrific monstrosities. Your team needs to \n take out the hivemind to open a way for the rest of the company to \n push thorugh. There are two paths, an open filed filled with tyranic forces, or \n a dark tunnel with horrors unknown. What is your next line of command?",
     width / 2,
-    210,
+    280,
   );
 
   // ---- Draw the button ----
   // We pass the button object to a helper function
   drawGameButton(gameBtn);
+  drawGameButton(gameBtnlose);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(gameBtn) ? HAND : ARROW);
+  cursor(isHover(gameBtn) || isHover(gameBtnlose) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -92,7 +106,10 @@ function drawGameButton({ x, y, w, h, label }) {
 function gameMousePressed() {
   // Only trigger the outcome if the button is clicked
   if (isHover(gameBtn)) {
-    triggerRandomOutcome();
+    currentScreen = "win";
+  }
+  if (isHover(gameBtnlose)) {
+    currentScreen = "lose";
   }
 }
 

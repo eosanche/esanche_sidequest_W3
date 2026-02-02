@@ -52,6 +52,7 @@ function draw() {
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
   else if (currentScreen === "win") drawWin();
+  else if (currentScreen === "win2") drawWin2();
   else if (currentScreen === "lose") drawLose();
 
   // (Optional teaching note)
@@ -79,6 +80,7 @@ function mousePressed() {
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
   else if (currentScreen === "win") winMousePressed?.();
+  else if (currentScreen === "win2") win2MousePressed?.();
   else if (currentScreen === "lose") loseMousePressed?.();
 }
 
@@ -98,6 +100,7 @@ function keyPressed() {
   else if (currentScreen === "instr") instrKeyPressed();
   else if (currentScreen === "game") gameKeyPressed?.();
   else if (currentScreen === "win") winKeyPressed?.();
+  else if (currentScreen === "win2") win2KeyPressed?.();
   else if (currentScreen === "lose") loseKeyPressed?.();
 }
 

@@ -12,7 +12,7 @@
 // and interact with the button on the game screen.
 // Keeping this in one object makes it easier to move,
 // resize, or restyle the button later.
-const gameBtn2 = {
+const gameBtn3 = {
   x: 200, // x position (centre of the button)
   y: 550, // y position (centre of the button)
   w: 300, // width
@@ -20,7 +20,7 @@ const gameBtn2 = {
   label: "Fight The Swarm", // text shown on the button
 };
 
-const gameBtnlose2 = {
+const gameBtnlose3 = {
   x: 550, // x position (centre of the button)
   y: 550, // y position (centre of the button)
   w: 300, // width
@@ -33,7 +33,7 @@ const gameBtnlose2 = {
 // ------------------------------
 // drawGame() is called from main.js *only*
 // when currentScreen === "game"
-function drawWin() {
+function drawWin2() {
   // Set background colour for the game screen
   background(38, 49, 76);
 
@@ -42,7 +42,7 @@ function drawWin() {
 
   // Main success message
   textSize(40);
-  text("FOR THE EMPEROR", width / 2, 160);
+  text("test", width / 2, 160);
 
   textSize(18);
   text(
@@ -59,13 +59,13 @@ function drawWin() {
   );
   // ---- Draw the button ----
   // We pass the button object to a helper function
-  drawGameButton(gameBtn2);
-  drawGameButton(gameBtnlose2);
+  drawGameButton(gameBtn3);
+  drawGameButton(gameBtnlose3);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(gameBtn2) || isHover(gameBtnlose2) ? HAND : ARROW);
+  cursor(isHover(gameBtn3) || isHover(gameBtnlose3) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -105,12 +105,12 @@ function drawGameButton({ x, y, w, h, label }) {
 // ------------------------------
 // This function is called from main.js
 // only when currentScreen === "game"
-function winMousePressed() {
+function win2MousePressed() {
   // Only trigger the outcome if the button is clicked
-  if (isHover(gameBtn2)) {
-    currentScreen = "win2";
+  if (isHover(gameBtn3)) {
+    currentScreen = "win3";
   }
-  if (isHover(gameBtnlose2)) {
+  if (isHover(gameBtnlose3)) {
     currentScreen = "lose";
   }
 }
@@ -119,7 +119,7 @@ function winMousePressed() {
 // Keyboard input for this screen
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
-function winKeyPressed() {
+function win2KeyPressed() {
   // ENTER key triggers the same behaviour as clicking the button
   if (keyCode === ENTER) {
     triggerRandomOutcome();
